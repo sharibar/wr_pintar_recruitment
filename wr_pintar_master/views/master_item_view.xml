@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="master_item_form_view" model="ir.ui.view">
+        <field name="name">master.item.form</field>
+        <field name="model">master.item</field>
+        <field name="arch" type="xml">
+            <form string="Master Item">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="tanggal_mulai"/>
+                        </group>
+                        <group>
+                            <field name="tanggal_selesai"/>
+                            <field name="ekspektasi_selesai" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Komponen">
+                            <field name="line_ids">
+                                <tree string="Line" editable="bottom">
+                                    <field name="komponen"/>
+                                    <field name="percentage" string="Bobot Persentase (%)"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="master_item_tree_view" model="ir.ui.view">
+        <field name="name">master.item.tree</field>
+        <field name="model">master.item</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="tanggal_mulai"/>
+                <field name="ekspektasi_selesai" readonly="1"/>
+                <field name="tanggal_selesai"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_master_item" model="ir.actions.act_window">
+        <field name="name">Master Items</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">master.item</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Klik Disini untuk membuat Master Item.
+            </p>
+        </field>
+    </record>
+
+
+</odoo>

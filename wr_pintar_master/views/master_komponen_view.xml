@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="master_komponen_view" model="ir.ui.view">
+        <field name="name">master.komponen.form</field>
+        <field name="model">master.komponen</field>
+        <field name="arch" type="xml">
+            <form string="Master Komponen">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <label for="waktu" string="Waktu Pengerjaan"/>
+                        <div class="o_row" name="waktu">
+                            <field name="waktu_pengerjaan"/>
+                            <field name="tipe_waktu" required="1"/>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="master_komponen_tree_view" model="ir.ui.view">
+        <field name="name">master.komponen.tree</field>
+        <field name="model">master.komponen</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="waktu_pengerjaan"/>
+                <field name="tipe_waktu" required="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_master_komponen" model="ir.actions.act_window">
+        <field name="name">Master Komponen</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">master.komponen</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Klik Disini untuk membuat Master Komponen.
+            </p>
+        </field>
+    </record>
+
+
+
+</odoo>

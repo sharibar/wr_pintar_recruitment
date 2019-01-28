@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="master_menu" name="Master Menu" sequence="2"  groups="base.group_user"/>
+    <menuitem id="master_menu_inside" name="Master" sequence="1"  groups="base.group_user" parent="master_menu"/>
+
+    <menuitem id="master_item_menu"
+              name="Master Item"
+              action="action_master_item"
+              parent="master_menu_inside"
+              sequence="1"
+              groups="base.group_user"/>
+
+    <menuitem id="master_komponen_menu"
+              name="Master Komponen"
+              action="action_master_komponen"
+              parent="master_menu_inside"
+              sequence="2"
+              groups="base.group_user"/>
+
+</odoo>
